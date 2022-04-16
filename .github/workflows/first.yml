@@ -8,7 +8,7 @@ jobs:
         run: |
           echo "abc" > newfile.txt
       - name: Uploads output file
-        uses: actions/upload-artifcat
+        uses: actions/upload-artifact@v3
         with:
           name: newfile
           path: newfile.txt
@@ -16,6 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download a file
-        uses: actions/download-artifact
+        uses: actions/download-artifact@v3
         with:
           name: output-log-file
