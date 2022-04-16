@@ -4,8 +4,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: check files
-        run: ls
       - name: Run build script
         run: ./.github/scripts/build.sh
         shell: bash
