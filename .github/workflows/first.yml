@@ -1,0 +1,21 @@
+on: [push]
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    name: upload file
+    steps:
+      - shell: bash
+        run: |
+          echo "abc" > newfile.txt
+      - name: Uploads output file
+        uses: actions/upload-artifcat
+        with:
+          name: newfile
+          path: newfile.txt
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download a file
+        uses: actions/download-artifact
+        with:
+          name: output-log-file
